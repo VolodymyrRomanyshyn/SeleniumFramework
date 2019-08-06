@@ -10,7 +10,7 @@
     <Product>SeleniumFramework</Product>
     <Copyright>Volodymyr Romanyshyn</Copyright>
     <RepositoryUrl>https://github.com/VolodymyrRomanyshyn/SeleniumFramework</RepositoryUrl>
-    <Description>The Framework extends PageFactory allows to Custom elements and List of elements example:
+    <Description>The Framework extends PageFactory allows to se Custom elements and Lists of elements example:
         [Id("UserName")] public TextInputField UserName;
         [Id("Password")] public TextInputField Password;
         [Id("btnLogin")] public Button Login;
