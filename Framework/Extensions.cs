@@ -12,5 +12,14 @@ namespace Framework
                 action(item);
             }
         }
+
+        public static T Random<T>(this IList<T> list)
+        {
+            if (list.Count < 1)
+            {
+                return default(T);
+            }
+            return list[new Random().Next(list.Count - 1)];
+        }
     }
 }

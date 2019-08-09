@@ -1,6 +1,5 @@
 ﻿using Framework.Driver;
 using OpenQA.Selenium;
-using System;
 
 namespace Framework.WebElements
 {

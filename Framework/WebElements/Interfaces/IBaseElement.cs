@@ -10,9 +10,9 @@ namespace Framework.WebElements
         string Name { get; }
         BaseDriver BaseDriver { get; }
         string Text { get; }
-        string VisibleString();
-        bool IsVisible();
-        bool IsNotVisible();
+        string VisibleText { get; }
+        bool IsVisible { get; }
+        bool IsNotVisible { get; }
         bool IsOnPage { get; }
         string TagValue(string tag);
         TElement CastTo<TElement>() where TElement : Element;
