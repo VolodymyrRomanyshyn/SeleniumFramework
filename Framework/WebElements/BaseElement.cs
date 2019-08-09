@@ -3,7 +3,6 @@ using Framework.Driver.Support;
 using Framework.Waiter;
 using NLog;
 using OpenQA.Selenium;
-using SeleniumExtras.PageObjects;
 using System;
 
 namespace Framework.WebElements
@@ -16,7 +15,6 @@ namespace Framework.WebElements
         public string Name { get; }
         protected Logger Logger { get; }
         public JavaScriptExecutor JavaScriptExecutor { get; }
-
 
         public BaseElement(IWebElement Element, BaseDriver Driver, string ElementName)
         {
@@ -32,31 +30,40 @@ namespace Framework.WebElements
 
         public override string ToString() => IWebElement.Text;
 
-        public virtual string VisibleString()
+        public virtual string VisibleText
         {
-            var IsVisible = WebWaiter.UntilToBeVisible(IWebElement);
-            if (IsVisible)
+            get
             {
-                return IWebElement.Text;
-            }
-            else
-            {
-                throw new NullReferenceException($"Element: {IWebElement}  is not visible on Page");
+                var IsVisible = WebWaiter.UntilToBeVisible(IWebElement);
+                if (IsVisible)
+                {
+                    return IWebElement.Text;
+                }
+                else
+                {
+                    throw new NullReferenceException($"Element: {IWebElement}  is not visible on Page");
+                }
             }
         }
 
-        public virtual bool IsVisible()
+        public virtual bool IsVisible
         {
-            var visibility = WebWaiter.UntilToBeVisible(IWebElement);
-            Logger.Info($"Element: {Name} is visible: {visibility}");
-            return visibility;
+            get
+            {
+                var visibility = WebWaiter.UntilToBeVisible(IWebElement);
+                Logger.Info($"Element: {Name} is visible: {visibility}");
+                return visibility;
+            }
         }
 
-        public bool IsNotVisible()
+        public bool IsNotVisible
         {
-            var unVisibility = WebWaiter.UntilToBeUnVisible(IWebElement);
-            Logger.Info($"Element: {Name} is not visible: {unVisibility}");
-            return unVisibility;
+            get
+            {
+                var unVisibility = WebWaiter.UntilToBeUnVisible(IWebElement);
+                Logger.Info($"Element: {Name} is not visible: {unVisibility}");
+                return unVisibility;
+            }
         }
 
         public bool IsOnPage

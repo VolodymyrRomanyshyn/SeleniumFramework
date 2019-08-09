@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Framework.WebElements
 {
@@ -19,15 +20,8 @@ namespace Framework.WebElements
         {
             if (!IsValueSelected(text))
             {
-                new Button(IWebElement, BaseDriver, Name).Click();
-                foreach (Button button in Options)
-                {
-                    if (button.ToString().Equals(text))
-                    {
-                        button.Click();
-                        break;
-                    }
-                }
+                CastTo<Button>().Click();
+                Options.FirstOrDefault(el => el.VisibleText.Equals(text)).Click();
             }
         }
 
@@ -35,8 +29,7 @@ namespace Framework.WebElements
 
         public void SelectAnyOption()
         {
-            var AnyOption = Options[new Random(Options.Count).Next()].TagValue("ng - reflect - model");
-            ClickByText(AnyOption);
+            Options.Random().Click();
         }
     }
 }

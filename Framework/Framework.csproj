@@ -3,18 +3,20 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <PackageId>SeleniumFramework</PackageId>
     <Authors>Volodymyr Romanyshyn</Authors>
     <Company>Dover Fueling Solutions</Company>
     <Product>SeleniumFramework</Product>
     <Copyright>Volodymyr Romanyshyn</Copyright>
     <RepositoryUrl>https://github.com/VolodymyrRomanyshyn/SeleniumFramework</RepositoryUrl>
-    <Description>The Framework extends PageFactory allows to se Custom elements and Lists of elements example:
+    <Description>The Framework extends PageFactory allows to use Custom elements and Lists of elements example:
         [Id("UserName")] public TextInputField UserName;
         [Id("Password")] public TextInputField Password;
         [Id("btnLogin")] public Button Login;
 </Description>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +25,8 @@
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="NLog" Version="4.6.6" />
     <PackageReference Include="Selenium.Chrome.WebDriver" Version="76.0.0" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.24.0" />
+    <PackageReference Include="Selenium.InternetExplorer.WebDriver" Version="3.141.5" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
   </ItemGroup>
