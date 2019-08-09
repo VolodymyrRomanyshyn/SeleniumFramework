@@ -5,7 +5,6 @@ using NLog;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.PageObjects;
 using System.Collections.Generic;
 using LogLevel = NLog.LogLevel;
 
@@ -24,7 +23,7 @@ namespace Framework.Driver
         public BaseDriver(ISettings settings)
         {
             Settings = settings;
-            IWebDriver = new DriverFactory().GetDriver(Settings.Browser);
+            IWebDriver = new DriverFactory().GetDriver(Settings);
             WebWaiter = new WebWaiter(new WebDriverWait(IWebDriver, Settings.TimeWait));
             Actions = new Actions(IWebDriver);
             Logger = LogManager.GetCurrentClassLogger();
@@ -39,8 +38,6 @@ namespace Framework.Driver
         public void NavigateTo(string url) => IWebDriver.Navigate().GoToUrl(url);
 
         public string GetTitle() => IWebDriver.Title;
-
-        public RetryingElementLocator RetryingElementLocator => new RetryingElementLocator(IWebDriver, Settings.TimeWait);
 
         public IWebElement FindElement(By by)
         {
