@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <PackageId>SeleniumFramework</PackageId>
     <Authors>Volodymyr Romanyshyn</Authors>
     <Company>Dover Fueling Solutions</Company>
@@ -13,11 +13,11 @@
     <Description>Documentation: https://github.com/VolodymyrRomanyshyn/SeleniumFramework/wiki
 The Framework extends PageFactory allows to use Custom elements and Lists of elements example:
         [Id("UserName")] public TextInputField UserName;
-        [Id("Password")] public TextInputField Password;
+        [XPath("YourXPath")] public TextInputField Password;
         [Id("btnLogin")] public Button Login;
 </Description>
-    <AssemblyVersion>1.0.3.0</AssemblyVersion>
-    <FileVersion>1.0.3.0</FileVersion>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
     <PackageProjectUrl>https://github.com/VolodymyrRomanyshyn/SeleniumFramework</PackageProjectUrl>
   </PropertyGroup>
 
