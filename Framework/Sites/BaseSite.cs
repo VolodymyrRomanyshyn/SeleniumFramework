@@ -1,13 +1,14 @@
 ﻿using Framework.BrowserSettings;
 using Framework.Driver;
 using Framework.SiteDecorators;
+using System;
 
 namespace Framework.Sites
 {
-    public class BaseSite
+    public class BaseSite : IDisposable
     {
-        private readonly ISettings Settings;
-        private readonly BaseDriver BaseDriver;
+        public ISettings Settings { get; }
+        public BaseDriver BaseDriver { get; }
 
         public BaseSite(BaseDriver baseDriver)
         {
@@ -18,6 +19,7 @@ namespace Framework.Sites
         public BaseSite()
         {
             BaseDriver = new BaseDriver();
+            Settings = BaseDriver.Settings;
             SiteFactory.InitElements(this, BaseDriver);
         }
 
@@ -26,6 +28,12 @@ namespace Framework.Sites
             Settings = settings;
             BaseDriver = new BaseDriver(Settings);
             SiteFactory.InitElements(this, BaseDriver);
+        }
+
+        public void Dispose()
+        {
+            BaseDriver?.Close();
+            BaseDriver?.Quit();
         }
     }
 }
