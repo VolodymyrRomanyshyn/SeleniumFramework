@@ -13,7 +13,7 @@ namespace Framework.WebElements
         {
             WebWaiter.UntilToBeVisible(IWebElement);
             IWebElement.Clear();
-            Logger.Info($"TextInputField {Name} cleared string");
+            Logger.Info($"TextInputField: {Name} cleared string");
             return this;
         }
 

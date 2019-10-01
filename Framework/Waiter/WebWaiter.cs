@@ -14,8 +14,6 @@ namespace Framework.Waiter
 
         public TResult Until<TResult>(Func<IWebDriver, TResult> condition) => wait.Until<TResult>(condition);
 
-        public void VerifyTitle(string title) => wait.Until(ExpectedConditions.TitleIs(title));
-
         public bool UntilToBeClickable(IWebElement element)
         {
             try
@@ -68,6 +66,22 @@ namespace Framework.Waiter
             return true;
         }
 
+        public bool UntilElementDissapearOpPage(By by)
+        {
+            try
+            {
+                IWebElement webElement = wait.Until(ExpectedConditions.ElementExists(by));
+                Until(_ => !webElement.Displayed);
+            }
+            catch (StaleElementReferenceException) { }
+            catch (NoSuchElementException) { }
+            catch (WebDriverTimeoutException)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public void UntilToBeVisible(By by) => wait.Until(ExpectedConditions.ElementIsVisible(by));
 
         public void WaitUtilTextToBePresentInElement(IWebElement element, string text) => wait.Until(ExpectedConditions.TextToBePresentInElement(element, text));
@@ -78,8 +92,11 @@ namespace Framework.Waiter
             {
                 wait.Until(el => !element.Displayed);
             }
-            catch (StaleElementReferenceException)
+            catch(Exception ex)
             {
+                if(ex is StaleElementReferenceException || ex is NoSuchElementException)
+                {
+                }
             }
         }
 
