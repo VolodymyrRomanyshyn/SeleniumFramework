@@ -6,6 +6,6 @@ namespace Framework.BrowserSettings
     {
         public TimeSpan TimeWait => TimeSpan.FromSeconds(20);
         public TimeSpan ReportTimeWait => TimeSpan.FromSeconds(60);
-        public Browsers Browser => Browsers.CH;
+        public Browsers Browser => ConfigReader.Browser;
     }
 }
