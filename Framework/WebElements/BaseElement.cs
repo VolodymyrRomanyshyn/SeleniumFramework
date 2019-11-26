@@ -4,6 +4,7 @@ using Framework.Waiter;
 using NLog;
 using OpenQA.Selenium;
 using System;
+using Framework.WebElements.Interfaces;
 
 namespace Framework.WebElements
 {

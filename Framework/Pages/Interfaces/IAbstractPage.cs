@@ -1,7 +1,7 @@
 ﻿using Framework.Driver;
-using Framework.WebElements;
+using Framework.WebElements.Interfaces;
 
-namespace Framework.Pages
+namespace Framework.Pages.Interfaces
 {
     public interface IAbstractPage
     {

@@ -5,6 +5,8 @@ using NLog;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
+using Framework.Pages.Interfaces;
+using Framework.WebElements.Interfaces;
 
 namespace Framework.Pages
 {

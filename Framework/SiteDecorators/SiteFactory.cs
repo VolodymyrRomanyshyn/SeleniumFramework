@@ -1,9 +1,9 @@
 ﻿using Framework.Driver;
-using Framework.Pages;
 using Framework.SiteDecorators.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Framework.Pages.Interfaces;
 
 namespace Framework.SiteDecorators
 {

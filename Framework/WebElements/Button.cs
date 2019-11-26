@@ -1,7 +1,8 @@
 ﻿using Framework.Driver;
-using Framework.Pages;
 using OpenQA.Selenium;
 using System;
+using Framework.Pages.Interfaces;
+using Framework.WebElements.Interfaces;
 
 namespace Framework.WebElements
 {

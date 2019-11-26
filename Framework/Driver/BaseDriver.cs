@@ -1,11 +1,11 @@
 ﻿using Framework.BrowserSettings;
 using Framework.Waiter;
-using Framework.WebElements;
 using NLog;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System.Collections.Generic;
+using Framework.WebElements.Interfaces;
 using LogLevel = NLog.LogLevel;
 
 namespace Framework.Driver

@@ -3,7 +3,6 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
-
 namespace Framework.Waiter
 {
     public class WebWaiter

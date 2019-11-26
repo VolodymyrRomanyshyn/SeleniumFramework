@@ -2,7 +2,7 @@
 using Framework.Driver.Support;
 using OpenQA.Selenium;
 
-namespace Framework.WebElements
+namespace Framework.WebElements.Interfaces
 {
     public interface IBaseElement : IElement
     {

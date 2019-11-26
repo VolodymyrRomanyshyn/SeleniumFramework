@@ -4,8 +4,9 @@ using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System.Collections.Generic;
 using System.Linq;
+using Framework.WebElements.Interfaces;
 
-namespace Framework.WebElements
+namespace Framework.WebElements.CustomElements
 {
     public class DropDown : SubPage, IDropDown
     {

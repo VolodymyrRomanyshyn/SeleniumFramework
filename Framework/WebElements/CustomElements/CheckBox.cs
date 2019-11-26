@@ -3,7 +3,7 @@ using Framework.Pages;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace Framework.WebElements
+namespace Framework.WebElements.CustomElements
 {
     public class CheckBox : SubPage
     {

@@ -3,8 +3,10 @@ using Framework.Pages;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System.Collections.Generic;
+using Framework.WebElements.Interfaces;
+using Framework.WebElements.Interfaces.ITable;
 
-namespace Framework.WebElements
+namespace Framework.WebElements.CustomElements.Table
 {
     public class Row : SubPage, IRow
     {
