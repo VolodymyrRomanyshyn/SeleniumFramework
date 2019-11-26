@@ -16,12 +16,6 @@ namespace Framework.WebElements.CustomElements.Table
         {
         }
 
-        public IBaseElement this[int Cell]
-        {
-            get
-            {
-                return Cells[Cell];
-            }
-        }
+        public IBaseElement this[int Cell] => Cells[Cell];
     }
 }

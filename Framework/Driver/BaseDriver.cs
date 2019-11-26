@@ -29,8 +29,8 @@ namespace Framework.Driver
             Logger = LogManager.GetCurrentClassLogger();
 
             var config = new NLog.Config.LoggingConfiguration();
-            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
+            var logConsole = new NLog.Targets.ConsoleTarget("logconsole");
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, logConsole);
             LogManager.Configuration = config;
         }
 

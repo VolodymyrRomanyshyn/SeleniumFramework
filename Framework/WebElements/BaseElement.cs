@@ -83,14 +83,7 @@ namespace Framework.WebElements
                     Logger.Info($"Element: {Name} is unable on page");
                 }
 
-                if (type != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return type != null;
             }
         }
 

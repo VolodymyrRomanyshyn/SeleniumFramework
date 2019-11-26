@@ -65,14 +65,7 @@ namespace Framework.PageDecorators
                 {
                     var cache = ShouldCacheLookup(member);
                     IList<By> bys = CreateLocatorList(member);
-                    if (bys.Count > 0)
-                    {
-                        return CustomElementListProxy.CreateProxy(driver, field.Name, elementOfListTargetType, locator, bys, cache);
-                    }
-                    else
-                    {
-                        return null;
-                    }
+                    return bys.Count > 0 ? CustomElementListProxy.CreateProxy(driver, field.Name, elementOfListTargetType, locator, bys, cache) : null;
                 }
                 else
                 {

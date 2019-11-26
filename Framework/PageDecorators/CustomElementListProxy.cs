@@ -10,7 +10,6 @@ namespace Framework.PageDecorators
 {
     public class CustomElementListProxy : CustomWebDriverObjectProxy
     {
-
         private object collection = null;
 
         private object ElementList

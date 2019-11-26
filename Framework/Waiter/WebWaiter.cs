@@ -65,7 +65,7 @@ namespace Framework.Waiter
             return true;
         }
 
-        public bool UntilElementDisapearOnPage(By by)
+        public bool UntilElementDisappearOnPage(By by)
         {
             try
             {

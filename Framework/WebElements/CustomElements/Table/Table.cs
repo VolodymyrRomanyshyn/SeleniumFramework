@@ -15,12 +15,6 @@ namespace Framework.WebElements.CustomElements.Table
         {
         }
 
-        public IRow this[int Row]
-        {
-            get
-            {
-                return Rows[Row];
-            }
-        }
+        public IRow this[int Row] => Rows[Row];
     }
 }
