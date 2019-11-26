@@ -34,7 +34,6 @@ namespace Framework.Driver
             LogManager.Configuration = config;
         }
 
-
         public void NavigateTo(string url) => IWebDriver.Navigate().GoToUrl(url);
 
         public string GetTitle() => IWebDriver.Title;

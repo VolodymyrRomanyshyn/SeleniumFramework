@@ -18,7 +18,6 @@ namespace Framework.Pages
 
         protected IPageObjectMemberDecorator PageObjectMemberDecorator;
 
-
         public AbstractPage(BaseDriver baseDriver)
         {
             BaseDriver = baseDriver;

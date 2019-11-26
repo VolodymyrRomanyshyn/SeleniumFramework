@@ -49,7 +49,6 @@ namespace Framework.PageDecorators
             return proxy;
         }
 
-
         protected override object Invoke(MethodInfo targetMethod, object[] args)
         {
             return targetMethod.Invoke(ElementList, args);

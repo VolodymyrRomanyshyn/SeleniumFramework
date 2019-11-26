@@ -33,7 +33,6 @@ namespace Framework.PageDecorators
 
             var genericType = targetType.GetGenericArguments().FirstOrDefault();
 
-
             if (field == null & (property == null || !hasPropertySet))
             {
                 return null;
