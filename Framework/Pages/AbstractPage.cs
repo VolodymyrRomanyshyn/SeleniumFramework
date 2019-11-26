@@ -1,5 +1,4 @@
-﻿using Framework.BrowserSettings;
-using Framework.Driver;
+﻿using Framework.Driver;
 using Framework.PageDecorators;
 using Framework.WebElements;
 using NLog;

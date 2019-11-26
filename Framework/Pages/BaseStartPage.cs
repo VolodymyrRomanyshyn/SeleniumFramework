@@ -1,5 +1,4 @@
-﻿using System;
-using Framework.Driver;
+﻿using Framework.Driver;
 using SeleniumExtras.PageObjects;
 
 namespace Framework.Pages
