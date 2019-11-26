@@ -48,7 +48,7 @@ namespace Framework.PageDecorators
                 return base.Decorate(member, locator);
             }
 
-            // BaseElement and childs
+            // BaseElement and child
             else if (typeof(BaseElement).IsAssignableFrom(targetType))
             {
                 var bys = CreateLocatorList(member);
@@ -57,7 +57,7 @@ namespace Framework.PageDecorators
                 return GetElement(targetType, webElement, driver, field.Name);
             }
 
-            // IList<BaseElement> and childs
+            // IList<BaseElement> and child
             else if (targetType.GetInterfaces().FirstOrDefault(t => t.IsGenericType && t.GetGenericTypeDefinition() == typeof(ICollection<>)) != null)
             {
                 Type elementOfListTargetType = targetType.GetGenericArguments()[0];

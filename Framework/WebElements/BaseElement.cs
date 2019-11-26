@@ -117,11 +117,11 @@ namespace Framework.WebElements
             }
         }
 
-        public void WaitUntilElementDissapear()
+        public void WaitUntilElementDisappear()
         {
             Logger.Info("Waiting until element Dissapear");
             WebWaiter.UntilToBeVisible(IWebElement);
-            WebWaiter.WaitUntilElementDissapear(IWebElement);
+            WebWaiter.WaitUntilElementDisappear(IWebElement);
         }
 
         public void WaitUntilTagValueIs(string Tag, string Value) => WebWaiter.UntilTagHasValue(IWebElement, Tag, Value);

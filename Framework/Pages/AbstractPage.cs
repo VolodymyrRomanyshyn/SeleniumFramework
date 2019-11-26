@@ -37,7 +37,7 @@ namespace Framework.Pages
             return ElementBy<TElement>(by);
         }
 
-        public TElement ElementWithTextContaints<TElement>(string text) where TElement : IElement
+        public TElement ElementWithTextContains<TElement>(string text) where TElement : IElement
         {
             By by = By.XPath($"//*[contains(text(),'{text}')]");
             return ElementBy<TElement>(by);

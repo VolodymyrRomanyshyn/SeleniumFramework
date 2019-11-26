@@ -17,7 +17,7 @@ namespace Framework.PageDecorators
         protected BaseDriver BaseDriver { get; private set; }
         protected string Name { get; private set; }
 
-        protected void SetSearchProperites(BaseDriver baseDriver, string name, Type elementOfGenericListType, IElementLocator locator, IEnumerable<By> bys, bool cache)
+        protected void SetSearchProperties(BaseDriver baseDriver, string name, Type elementOfGenericListType, IElementLocator locator, IEnumerable<By> bys, bool cache)
         {
             ElementOfGenericListType = elementOfGenericListType;
             BaseDriver = baseDriver;

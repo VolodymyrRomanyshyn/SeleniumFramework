@@ -17,7 +17,7 @@ namespace Framework.WebElements.Interfaces
         string TagValue(string tag);
         TElement CastTo<TElement>() where TElement : Element;
         void MoveToElement();
-        void WaitUntilElementDissapear();
+        void WaitUntilElementDisappear();
         void WaitUntilTagValueIs(string Tag, string Value);
         JavaScriptExecutor JavaScriptExecutor { get; }
     }
