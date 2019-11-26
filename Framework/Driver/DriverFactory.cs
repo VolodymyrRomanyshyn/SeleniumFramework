@@ -13,7 +13,8 @@ namespace Framework.Driver
         {
             switch (settings.Browser)
             {
-                case "chrome":
+                case Browsers.CH:
+                case Browsers.Chrome:
                     {
                         var options = new ChromeOptions();
                         options.AddArgument("--lang=en-GB");
@@ -23,7 +24,8 @@ namespace Framework.Driver
                         Driver.Manage().Window.Maximize();
                         return Driver;
                     }
-                case "firefox":
+                case Browsers.FF:
+                case Browsers.Firefox:
                     {
                         var options = new FirefoxOptions();
                         //options.SetPreference("intl.accept_languages", "en"); <- TODO it is on changing language

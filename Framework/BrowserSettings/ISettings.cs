@@ -6,6 +6,6 @@ namespace Framework.BrowserSettings
     {
         TimeSpan TimeWait { get; }
         TimeSpan ReportTimeWait { get; }
-        string Browser { get; }
+        Browsers Browser { get; }
     }
 }
