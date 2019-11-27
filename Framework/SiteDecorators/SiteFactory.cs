@@ -1,9 +1,9 @@
 ﻿using Framework.Driver;
-using Framework.Pages;
 using Framework.SiteDecorators.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Framework.Pages.Interfaces;
 
 namespace Framework.SiteDecorators
 {
@@ -50,11 +50,11 @@ namespace Framework.SiteDecorators
                 if (typeof(IAbstractPage).IsAssignableFrom(targetType))
                 {
                     // Getting Link attributes 
-                    var atttibutes = Attribute.GetCustomAttributes(member, typeof(LinkAttribute));
+                    var attributes = Attribute.GetCustomAttributes(member, typeof(LinkAttribute));
                     string link = null;
-                    if (atttibutes.Length != 0)
+                    if (attributes.Length != 0)
                     {
-                        var linkAttribute = atttibutes[0] as LinkAttribute;
+                        var linkAttribute = attributes[0] as LinkAttribute;
                         link = linkAttribute.Link;
                     }
                     //Decorating all PageObject members

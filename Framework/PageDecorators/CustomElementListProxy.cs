@@ -10,7 +10,6 @@ namespace Framework.PageDecorators
 {
     public class CustomElementListProxy : CustomWebDriverObjectProxy
     {
-
         private object collection = null;
 
         private object ElementList
@@ -45,10 +44,9 @@ namespace Framework.PageDecorators
         {
             var tlist = typeof(IList<>).MakeGenericType(elementOfGenericListType);
             var proxy = typeof(DispatchProxy).GetMethod("Create").MakeGenericMethod(tlist, typeof(CustomElementListProxy)).Invoke(null, new object[] { });
-            ((CustomElementListProxy)proxy).SetSearchProperites(baseDriver, name, elementOfGenericListType, locator, bys, cacheLookups);
+            ((CustomElementListProxy)proxy).SetSearchProperties(baseDriver, name, elementOfGenericListType, locator, bys, cacheLookups);
             return proxy;
         }
-
 
         protected override object Invoke(MethodInfo targetMethod, object[] args)
         {

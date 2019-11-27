@@ -2,7 +2,7 @@
 using Framework.Driver.Support;
 using OpenQA.Selenium;
 
-namespace Framework.WebElements
+namespace Framework.WebElements.Interfaces
 {
     public interface IBaseElement : IElement
     {
@@ -17,7 +17,7 @@ namespace Framework.WebElements
         string TagValue(string tag);
         TElement CastTo<TElement>() where TElement : Element;
         void MoveToElement();
-        void WaitUntilElementDissapear();
+        void WaitUntilElementDisappear();
         void WaitUntilTagValueIs(string Tag, string Value);
         JavaScriptExecutor JavaScriptExecutor { get; }
     }

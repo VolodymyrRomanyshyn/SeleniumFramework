@@ -1,5 +1,6 @@
 ﻿using Framework.Driver;
 using Framework.PageDecorators;
+using Framework.Pages.Interfaces;
 using Framework.WebElements;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;

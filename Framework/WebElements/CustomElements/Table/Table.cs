@@ -3,8 +3,9 @@ using Framework.Pages;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System.Collections.Generic;
+using Framework.WebElements.Interfaces.ITable;
 
-namespace Framework.WebElements
+namespace Framework.WebElements.CustomElements.Table
 {
     public class Table : SubPage, ITable
     {
@@ -14,12 +15,6 @@ namespace Framework.WebElements
         {
         }
 
-        public IRow this[int Row]
-        {
-            get
-            {
-                return Rows[Row];
-            }
-        }
+        public IRow this[int Row] => Rows[Row];
     }
 }

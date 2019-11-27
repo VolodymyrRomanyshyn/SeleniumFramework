@@ -1,11 +1,11 @@
 ﻿using Framework.BrowserSettings;
 using Framework.Waiter;
-using Framework.WebElements;
 using NLog;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System.Collections.Generic;
+using Framework.WebElements.Interfaces;
 using LogLevel = NLog.LogLevel;
 
 namespace Framework.Driver
@@ -29,11 +29,10 @@ namespace Framework.Driver
             Logger = LogManager.GetCurrentClassLogger();
 
             var config = new NLog.Config.LoggingConfiguration();
-            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
+            var logConsole = new NLog.Targets.ConsoleTarget("logconsole");
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, logConsole);
             LogManager.Configuration = config;
         }
-
 
         public void NavigateTo(string url) => IWebDriver.Navigate().GoToUrl(url);
 

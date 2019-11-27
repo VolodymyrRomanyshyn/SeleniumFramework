@@ -3,7 +3,6 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
-
 namespace Framework.Waiter
 {
     public class WebWaiter
@@ -66,7 +65,7 @@ namespace Framework.Waiter
             return true;
         }
 
-        public bool UntilElementDissapearOnPage(By by)
+        public bool UntilElementDisappearOnPage(By by)
         {
             try
             {
@@ -86,7 +85,7 @@ namespace Framework.Waiter
 
         public void WaitUtilTextToBePresentInElement(IWebElement element, string text) => wait.Until(ExpectedConditions.TextToBePresentInElement(element, text));
 
-        public void WaitUntilElementDissapear(IWebElement element)
+        public void WaitUntilElementDisappear(IWebElement element)
         {
             try
             {

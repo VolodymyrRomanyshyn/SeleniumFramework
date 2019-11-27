@@ -1,4 +1,4 @@
-﻿namespace Framework.WebElements
+﻿namespace Framework.WebElements.Interfaces.ITable
 {
     public interface IRow : IBaseElement
     {

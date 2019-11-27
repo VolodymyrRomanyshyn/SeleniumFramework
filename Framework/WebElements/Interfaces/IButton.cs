@@ -1,6 +1,6 @@
-﻿using Framework.Pages;
+﻿using Framework.Pages.Interfaces;
 
-namespace Framework.WebElements
+namespace Framework.WebElements.Interfaces
 {
     public interface IButton : IBaseElement
     {

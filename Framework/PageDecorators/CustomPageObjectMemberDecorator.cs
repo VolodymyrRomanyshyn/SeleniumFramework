@@ -33,7 +33,6 @@ namespace Framework.PageDecorators
 
             var genericType = targetType.GetGenericArguments().FirstOrDefault();
 
-
             if (field == null & (property == null || !hasPropertySet))
             {
                 return null;
@@ -49,7 +48,7 @@ namespace Framework.PageDecorators
                 return base.Decorate(member, locator);
             }
 
-            // BaseElement and childs
+            // BaseElement and child
             else if (typeof(BaseElement).IsAssignableFrom(targetType))
             {
                 var bys = CreateLocatorList(member);
@@ -58,7 +57,7 @@ namespace Framework.PageDecorators
                 return GetElement(targetType, webElement, driver, field.Name);
             }
 
-            // IList<BaseElement> and childs
+            // IList<BaseElement> and child
             else if (targetType.GetInterfaces().FirstOrDefault(t => t.IsGenericType && t.GetGenericTypeDefinition() == typeof(ICollection<>)) != null)
             {
                 Type elementOfListTargetType = targetType.GetGenericArguments()[0];
@@ -66,14 +65,7 @@ namespace Framework.PageDecorators
                 {
                     var cache = ShouldCacheLookup(member);
                     IList<By> bys = CreateLocatorList(member);
-                    if (bys.Count > 0)
-                    {
-                        return CustomElementListProxy.CreateProxy(driver, field.Name, elementOfListTargetType, locator, bys, cache);
-                    }
-                    else
-                    {
-                        return null;
-                    }
+                    return bys.Count > 0 ? CustomElementListProxy.CreateProxy(driver, field.Name, elementOfListTargetType, locator, bys, cache) : null;
                 }
                 else
                 {

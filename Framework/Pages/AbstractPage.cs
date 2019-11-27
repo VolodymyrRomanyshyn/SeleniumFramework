@@ -1,11 +1,12 @@
-﻿using Framework.BrowserSettings;
-using Framework.Driver;
+﻿using Framework.Driver;
 using Framework.PageDecorators;
 using Framework.WebElements;
 using NLog;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
+using Framework.Pages.Interfaces;
+using Framework.WebElements.Interfaces;
 
 namespace Framework.Pages
 {
@@ -16,7 +17,6 @@ namespace Framework.Pages
         public Logger Logger { get; }
 
         protected IPageObjectMemberDecorator PageObjectMemberDecorator;
-
 
         public AbstractPage(BaseDriver baseDriver)
         {
@@ -37,7 +37,7 @@ namespace Framework.Pages
             return ElementBy<TElement>(by);
         }
 
-        public TElement ElementWithTextContaints<TElement>(string text) where TElement : IElement
+        public TElement ElementWithTextContains<TElement>(string text) where TElement : IElement
         {
             By by = By.XPath($"//*[contains(text(),'{text}')]");
             return ElementBy<TElement>(by);

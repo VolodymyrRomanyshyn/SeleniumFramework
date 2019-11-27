@@ -4,6 +4,7 @@ using Framework.Waiter;
 using NLog;
 using OpenQA.Selenium;
 using System;
+using Framework.WebElements.Interfaces;
 
 namespace Framework.WebElements
 {
@@ -82,14 +83,7 @@ namespace Framework.WebElements
                     Logger.Info($"Element: {Name} is unable on page");
                 }
 
-                if (type != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return type != null;
             }
         }
 
@@ -116,11 +110,11 @@ namespace Framework.WebElements
             }
         }
 
-        public void WaitUntilElementDissapear()
+        public void WaitUntilElementDisappear()
         {
             Logger.Info("Waiting until element Dissapear");
             WebWaiter.UntilToBeVisible(IWebElement);
-            WebWaiter.WaitUntilElementDissapear(IWebElement);
+            WebWaiter.WaitUntilElementDisappear(IWebElement);
         }
 
         public void WaitUntilTagValueIs(string Tag, string Value) => WebWaiter.UntilTagHasValue(IWebElement, Tag, Value);

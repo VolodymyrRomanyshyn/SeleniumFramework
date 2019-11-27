@@ -1,7 +1,7 @@
 ﻿using Framework.Driver;
-using Framework.WebElements;
+using Framework.WebElements.Interfaces;
 
-namespace Framework.Pages
+namespace Framework.Pages.Interfaces
 {
     public interface IAbstractPage
     {
@@ -9,7 +9,7 @@ namespace Framework.Pages
         BaseDriver BaseDriver { get; }
         TPage Page<TPage>() where TPage : IAbstractPage;
         TElement ElementWithText<TElement>(string text) where TElement : IElement;
-        TElement ElementWithTextContaints<TElement>(string text) where TElement : IElement;
+        TElement ElementWithTextContains<TElement>(string text) where TElement : IElement;
         void ClickButtonByText(string text);
         IAbstractPage NavigateTo<TPage>(string url) where TPage : IAbstractPage;
         
