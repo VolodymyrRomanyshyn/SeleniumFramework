@@ -3,11 +3,11 @@ using Microsoft.Extensions.Configuration;
 
 namespace Framework.BrowserSettings
 {
-    class ConfigReader
+    public class ConfigReader
     {
         protected static IConfiguration config;
 
-        protected static IConfiguration Config => config ?? new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+        protected static IConfiguration Config => config ?? (config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build());
 
         public static Browsers Browser
         {
