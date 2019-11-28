@@ -5,7 +5,7 @@ namespace Framework.BrowserSettings
 {
     public class ConfigReader
     {
-        protected static IConfiguration config;
+        private static IConfiguration config;
 
         protected static IConfiguration Config => config ?? (config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build());
 
