@@ -4,8 +4,8 @@ namespace Framework.BrowserSettings
 {
     public class Settings : ISettings
     {
-        public TimeSpan TimeWait => TimeSpan.FromSeconds(20);
-        public TimeSpan ReportTimeWait => TimeSpan.FromSeconds(60);
+        public TimeSpan TimeWait => ConfigReader.TimeWait;
+        public TimeSpan ReportTimeWait => ConfigReader.ReportTimeWait;
         public Browsers Browser => ConfigReader.Browser;
     }
 }
