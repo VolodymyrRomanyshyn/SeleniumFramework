@@ -1,6 +1,8 @@
 ﻿using Framework.BrowserSettings;
 using Framework.Driver;
 using Framework.SiteDecorators;
+using NLog;
+using OpenQA.Selenium;
 using System;
 
 namespace Framework.Sites
@@ -27,6 +29,13 @@ namespace Framework.Sites
         {
             Settings = settings;
             BaseDriver = new BaseDriver(Settings);
+            SiteFactory.InitElements(this, BaseDriver);
+        }
+
+        public BaseSite(IWebDriver webDriver, Logger logger, ISettings settings)
+        {
+            Settings = settings;
+            BaseDriver = new BaseDriver(webDriver, logger, settings);
             SiteFactory.InitElements(this, BaseDriver);
         }
 

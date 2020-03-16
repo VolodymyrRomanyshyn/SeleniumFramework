@@ -34,6 +34,13 @@ namespace Framework.Driver
             LogManager.Configuration = config;
         }
 
+        public BaseDriver(IWebDriver webDriver, Logger logger, ISettings settings)
+        {
+            IWebDriver = webDriver;
+            Logger = logger;
+            Settings = settings;
+        }
+
         public void NavigateTo(string url) => IWebDriver.Navigate().GoToUrl(url);
 
         public string GetTitle() => IWebDriver.Title;
